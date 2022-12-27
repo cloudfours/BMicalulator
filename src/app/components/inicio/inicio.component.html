@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-lg-4 offset-lg-4">
+        <h2 class="titulo">BMIcalculator</h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="fondoItem contenedor" style="cursor:pointer" (click)="masculino()" [ngClass]="{'sexoDesactivo': sexo==='Femenino'}">
+                    <i class="fa-solid fa-mars sexo"></i>
+                    <p>Masculino</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="fondoItem contenedor" style="cursor:pointer"(click)="femenino()"  [ngClass]="{'sexoDesactivo': sexo==='Masculino'}">
+                    <i class="fa-solid fa-venus sexo"></i>
+                    <p>Femenino</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="fondoItem">
+                    <div class="contenedor">
+                        <p>Altura</p>
+                        <div class="numero">{{altura}} <span class="centimetro">cm</span></div>
+
+                        <input type="range" class="form-range" [value]="altura" min="120" max="220"  id="customRange3" (input)="cambiarAltura($event)">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="fondoItem contenedor">
+                    <p>Peso</p>
+                    <div class="numero">
+                        {{peso}}
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-minus sumarResta" (click)="restarPeso()"></i>
+                        <i class="fa-solid fa-plus sumarResta"(click)="sumarPeso()"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="fondoItem contenedor">
+                    <p>Edad</p>
+                    <div class="numero">
+                        {{edad}}
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-minus sumarResta" (click)="restarEdad()"></i>
+                        <i class="fa-solid fa-plus sumarResta" (click)="sumarEdad()"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <button (click)="calcularbmi()" class="btn btn-primary btn-lg btn-block btn-color">Calcular</button>
+            </div>
+        </div>
+    </div>
+
+</div>
